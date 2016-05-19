@@ -23,15 +23,17 @@ SIGNAL aux : STD_LOGIC_VECTOR (W-1 DOWNTO 0);
 BEGIN
 
 day_seconds <= "010101000110000000"; -- 86400
-sixty <= "000000000000111100";
+sixty <= "000000000000111100"; -- 60
 
- PROCESS(up, down, day_seconds, aux, sixty)
+ PROCESS( in_bits, up, down )
  BEGIN
 
   IF ( up = '1') THEN
     aux <= in_bits + sixty;
   ELSIF ( down = '1' ) THEN
-    aux <= in_bits - sixty;    
+    aux <= in_bits - sixty; 
+  ELSE  
+    aux <= in_bits;
   END IF;
   
   IF ( aux = day_seconds ) THEN
@@ -44,3 +46,4 @@ sixty <= "000000000000111100";
   
  END PROCESS;
 END arch_1;
+
