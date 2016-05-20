@@ -4,17 +4,17 @@ USE IEEE.std_logic_unsigned.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
 
-ENTITY set_clock IS
+ENTITY Offset_Counter IS
  GENERIC(W : NATURAL := 18);
  PORT (in_bits : IN STD_LOGIC_VECTOR(W-1 DOWNTO 0);
  up : IN BIT;
  down: IN BIT;
  out_bits : OUT STD_LOGIC_VECTOR(W-1 DOWNTO 0));
-END set_clock;
+END Offset_Counter;
 
 -----------------------------------------------------------
 
-ARCHITECTURE arch_1 OF set_clock IS
+ARCHITECTURE arch_1 OF Offset_Counter IS
 
 SIGNAL day_seconds : STD_LOGIC_VECTOR (W-1 DOWNTO 0); -- 86400
 SIGNAL sixty : STD_LOGIC_VECTOR (W-1 DOWNTO 0); -- 86400
