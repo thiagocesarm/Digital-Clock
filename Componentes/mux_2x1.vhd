@@ -8,7 +8,6 @@ GENERIC (W : NATURAL := 18);
 PORT (a, b : IN BIT_VECTOR (W-1 DOWNTO 0);
        sel : IN BIT;
          s : OUT BIT_VECTOR (W-1 DOWNTO 0));
-         
 END mux_2x1;
 
 ------------------------------------------------
